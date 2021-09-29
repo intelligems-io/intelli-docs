@@ -1,7 +1,9 @@
 ---
 sidebar_position: 2
 ---
+
 # Update Scripts Editor
+
 Shopify scripts editor enables changing the price in the cart so that your customers pay exactly the price they
 
 :::note Shopify Plus only
@@ -20,4 +22,6 @@ Input.cart.line_items.each do |line_item|
     line_item.change_line_price(line_item.line_price - discount, message: 'intelligems')
   end
 end
+
+Output.cart = Input.cart
 ```
