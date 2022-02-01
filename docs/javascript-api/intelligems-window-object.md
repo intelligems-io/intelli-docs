@@ -23,11 +23,10 @@ console.log(igData.user.igId); // ig_71e855a9313945b63eb35e0abd5b63361d48
 
 ### Attributes
 
-
 **`igData.user.igId`** The unique ID associated with this user. It will persist across sessions and is used to connect browsing behavior with other shopify events.
 
-**`igData.user.getPriceByVariantId(variantId)`** Takes in a `variantId` *(Integer, required)* of the product variant ID for the item in shopify, i.e. 31148541345886 and returns the as a number, i.e. `123.45`. If the variant is not included in any experiment, *null* will be returned.
+**`igData.user.getPriceByVariantId(variantId)`** Takes in a `variantId` _(Integer, required)_ of the product variant ID for the item in shopify, i.e. 31148541345886 and returns the as a number, i.e. `123.45`. If the variant is not included in any experiment, _null_ will be returned.
 
-**`igData.user.getAlternateVariant(variantId)`** Takes in a `variantId` *(Integer, required)* of the product variant ID for the item in shopify, i.e. 31148541345886 and returns the relevant variant ID for that user should there be an alternate variant (i.e. if products were duplicated with different prices). If the variant is not included in any experiment, *null* will be returned.
+**`igData.user.getAlternateVariant(variantId)`** Takes in a `variantId` _(Integer, required)_ of the product variant ID for the item in shopify, i.e. 31148541345886 and returns the relevant variant ID for that user should there be an alternate variant (i.e. if products were duplicated with different prices). If the variant is not included in any experiment, _null_ will be returned.
 
-**`igData.user.getTestGroupByExperimentId(experimentId)`** Takes in an `experimentId` *(String, UUID)* and returns the test group, an object of type [TestGroup](entities#testgroup) relevant to this user. 
+**`igData.user.getTestGroupName(experimentId)`** Takes in an `experimentId` _(String, UUID)_ and returns the test group, an object of type [TestGroup](entities#testgroup) relevant to this user.
