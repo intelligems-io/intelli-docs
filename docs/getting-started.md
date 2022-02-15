@@ -15,5 +15,5 @@ Our app may be downloaded and installed
 from [here](https://apps.shopify.com/intelligems?surface_detail=intelligems&surface_inter_position=1&surface_intra_position=2&surface_type=search).
 
 To integrate Intelligems into your Shopify site, please read
-our [integration guide](./shopify-integration/update-your-theme).
+our [integration guide](./shopify-integration/install-app).
 

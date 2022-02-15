@@ -3,6 +3,7 @@ title: Entities
 sidebar_position: 2
 ---
 
+
 ### Experiment
 An experiment object:
  - `id` A unique id for the experiment

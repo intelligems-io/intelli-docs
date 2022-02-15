@@ -13,13 +13,16 @@ The Intelligems Preview and Integration modes will be available after [installin
 
 Two modes exist:
 
-1. **Preview Mode**:  This mode will let you _preview_ your experiment before it goes live. This requires a created (but not
-   started) experiment. Enter this mode by adding `?ig-priview=True` to your website's URL.
-2. **Integration Mode**: This mode will highlight elements the Intelligems app recognizes. Price elements which have been
-   recognized but not changed will be highlighted **blue** and price elements which have been updated will be
+1. **Preview Mode**:  This mode will let you _preview_ your experiment before it goes live. This requires a created (but
+   not started) experiment. Enter this mode by adding `?ig-priview=True` to your website's URL.
+2. **Integration Mode**: This mode will highlight elements the Intelligems app recognizes. Price elements which have
+   been recognized but not changed will be highlighted **blue** and price elements which have been updated will be
    highlighted **orange**. Enter this mode by adding `ig-integration=True` to your website's URL.
 3. **Preview Mode & Integration Mode**: Both modes may be used together at once. Enter both by
    adding `?ig-preview=True&ig-integration=True` to your website's URL.
+
+Note: Shopify Plus members using _checkout scripts_ may notice a discrepancy in the cart prices during preview mode.
+This will go away once the product price is updated in Shopify.
 
 :::tip
 
@@ -64,7 +67,7 @@ added to either `additional_price_class_selectors` or `additional_compare_price_
 your app settings.
 
 1. Right-click a product price on the page and choose `inspect`. A developer-tools window will open up with the element
-   you right-clicked selected.
+   you right-clicked highlighted.
 2. If the highlighted element already has an `id`, add the ID to your settings page in this format: `#<ID>`.
 3. If the highlighted element does not have an `id`, follow its parents outward until you find an element with a
    noteworthy class name.
@@ -93,7 +96,7 @@ This option requires updating your theme `.liquid` files directly. The following
 - Add the class `igComparePrice` to any html element (i.e. `span`) that contains the product's `compare-at price`. This
   is the crossed out price.
 
-- Additionally, in the same element as above, add a `data-product-id` attribute,like `data-product-id="{{product.id}}"`
+- Additionally, in the same element as above, add a `data-product-id` attribute, like `data-product-id="{{product.id}}"`
 
 #### Product Details Page Example
 
@@ -174,7 +177,10 @@ The collections page template is often located in a file called `product-grid-it
 {%- endif -%}
 ```
 
-:::info Need help? If you need help, you can reach out to us as support@intelligems.io for integration assistance.
+:::info
+
+Need help? If you need help, you can reach out to us as support@intelligems.io for integration assistance.
+
 :::
 
 

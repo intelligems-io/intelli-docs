@@ -16,3 +16,9 @@ the Intelligems App.
   ...
 </head>
 ```
+
+:::info
+ 
+**Shopify Plus Members** should also add this script to `checkout.liquid`.
+
+:::
