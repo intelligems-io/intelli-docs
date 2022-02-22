@@ -17,9 +17,9 @@ Two modes exist:
    not started) experiment. Enter this mode by adding `?ig-preview=True` to your website's URL.
 2. **Integration Mode**: This mode will highlight elements the Intelligems app recognizes. Price elements which have
    been recognized but not changed will be highlighted **blue** and price elements which have been updated will be
-   highlighted **orange**. Enter this mode by adding `ig-integration=True` to your website's URL.
+   highlighted **orange**. Enter this mode by adding `ig-integration=true` to your website's URL.
 3. **Preview Mode & Integration Mode**: Both modes may be used together at once. Enter both by
-   adding `?ig-preview=True&ig-integration=True` to your website's URL.
+   adding `?ig-preview=true&ig-integration=true` to your website's URL.
 
 Note: Shopify Plus members using _checkout scripts_ may notice a discrepancy in the cart prices during preview mode.
 This will go away once the product price is updated in Shopify.
