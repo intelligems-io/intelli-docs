@@ -14,7 +14,7 @@ The Intelligems Preview and Integration modes will be available after [installin
 Two modes exist:
 
 1. **Preview Mode**:  This mode will let you _preview_ your experiment before it goes live. This requires a created (but
-   not started) experiment. Enter this mode by adding `?ig-priview=True` to your website's URL.
+   not started) experiment. Enter this mode by adding `?ig-preview=True` to your website's URL.
 2. **Integration Mode**: This mode will highlight elements the Intelligems app recognizes. Price elements which have
    been recognized but not changed will be highlighted **blue** and price elements which have been updated will be
    highlighted **orange**. Enter this mode by adding `ig-integration=True` to your website's URL.
