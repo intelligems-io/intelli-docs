@@ -40,14 +40,34 @@ You can learn more about this [here](https://community.shopify.com/c/shopify-des
 ## Hide the discount
 
 If we're using the Checkout Scripts to apply a "hidden" discount on a product, we don't want to show the user
-that they're receiving an intelligems discount. For the strikethrough price, we might include the condition:
+that they're receiving an intelligems discount. 
+
+This snippet will create a variable `intelligems_discount` per line item which is either 0 or a non-zero number in cents which represents the intelligems price change. This can be used also to adjust strikethrough prices if desired.
+
 ```
-(item.properties._igLineItemDiscount == "0" or item.properties._igLineItemDiscount == blank or item.properties._igLineItemDiscount == nil)
+    {% assign intelligems_total = 0 %}
+    {% for item in cart.items %}
+      {% case item.properties._igLineItemDiscount %}
+        {% when "0" or nil or blank %}
+          {% assign intelligems_discount = 0 %}
+        {% else %}
+          {% assign intelligems_discount = item.properties._igLineItemDiscount | plus: 0 %}
+          {% assign intelligems_total = intelligems_total | plus: item.properties._igLineItemDiscount %}
+      {% endcase %} 
+     ....
+    {% endfor %}
+```
+
+For the strikethrough price, we might include the condition:
+```
+{% if intelligems_discount == 0 %}
+...
+{% endif %}
 ```
 So the final result will look like:
 
 ```html
-{% if item.original_line_price and item.original_line_price != item.line_price and (item.properties._igLineItemDiscount == "0" or item.properties._igLineItemDiscount == blank or item.properties._igLineItemDiscount == nil) %}
+{% if item.original_line_price and item.original_line_price != item.line_price and intelligems_discount == 0 %}
     <span style="text-decoration:line-through;">{{ item.original_line_price | money  }}</span><br>
 {% endif %}
 ```
