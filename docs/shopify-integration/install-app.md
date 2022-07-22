@@ -19,6 +19,6 @@ the Intelligems App.
 
 :::info
  
-**Shopify Plus Members** should also add this script to `checkout.liquid`.
+**Shopify Plus Members** should also add this script to `checkout.liquid` and other files such as `theme.shogun.liquid`.
 
 :::

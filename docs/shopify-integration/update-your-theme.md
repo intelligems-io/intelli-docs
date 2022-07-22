@@ -14,10 +14,10 @@ The Intelligems Preview and Integration modes will be available after [installin
 Two modes exist:
 
 1. **Preview Mode**:  This mode will let you _preview_ your experiment before it goes live. This requires a created (but
-   not started) experiment. Enter this mode by adding `?ig-preview=True` to your website's URL.
+   not started) experiment. Enter this mode by adding `?ig-preview=true` to your website's URL.
 2. **Integration Mode**: This mode will highlight elements the Intelligems app recognizes. Price elements which have
    been recognized but not changed will be highlighted **blue** and price elements which have been updated will be
-   highlighted **orange**. Enter this mode by adding `ig-integration=true` to your website's URL.
+   highlighted **orange**. Enter this mode by adding `?ig-integration=true` to your website's URL.
 3. **Preview Mode & Integration Mode**: Both modes may be used together at once. Enter both by
    adding `?ig-preview=true&ig-integration=true` to your website's URL.
 
@@ -26,7 +26,7 @@ This will go away once the product price is updated in Shopify.
 
 :::tip
 
-We highly recommend using Integration mode!  This mode will highlight the price elements the Intelligems app recognizes.
+We highly recommend using Integration mode! This mode will highlight the price elements the Intelligems app recognizes.
 A successful integration will highlight all price elements on the page.
 
 :::
@@ -60,11 +60,15 @@ In either case, these prices will need to be tagged.
 
 ## How to Tag Product Prices
 
-### Option 1: Mark Product Prices Using Query Selectors (Recommended)
+### Option 1: Intelligems Integration Widget (Recommended)
+
+This option allows you to click on prices in your window to tag them. See how to use the integration widget [here](https://help.intelligems.io/article/33-integrating-intelligems-with-the-integration-widget).
+
+### Option 2: Mark Product Prices Using Query Selectors
 
 This option involves marking the **location** of the price element through query selectors. Each selector should be
 added to either `additional_price_class_selectors` or `additional_compare_price_class_selectors`, as appropriate, in
-your app settings.
+your Intelligems app advanced settings. If you do not have access to the advanced settings, email support@intelligems.io.
 
 1. Right-click a product price on the page and choose `inspect`. A developer-tools window will open up with the element
    you right-clicked highlighted.
@@ -176,6 +180,23 @@ The collections page template is often located in a file called `product-grid-it
 >
 {%- endif -%}
 ```
+
+## Element Tags
+
+Put these tags directly onto the html element you want to affect.
+
+`data-product-id="{{product.id}}"`: Use this tag if the price is not correctly being picked up.
+
+`data-variant-id="{{variant.id}}"`: Use this tag to set the variant id directly onto an element. 
+
+`data-price-offset="<insert-number-here>"`: Use this tag to add/subtract from the price inside the html element.
+
+![data-price-offset Example](/img/data-price-offset.png)
+
+`data-price-multiplier="<insert-number-here>"`: Use this tag to multiply the price inside the html element. Useful for doing per unit prices.
+
+![data-price-multiplier Example](/img/data-price-multiplier.png)
+
 
 :::info
 

@@ -38,7 +38,7 @@ module.exports = {
     footer: {
       style: 'dark',
 
-      copyright: `Copyright © ${new Date().getFullYear()} Intelligems, LLC.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Intelligems, Inc.`,
     },
     prism: {
       theme: lightCodeTheme,

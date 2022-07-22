@@ -11,15 +11,15 @@ In case discounts or hidden line item properties appear in the cart, here are so
 Most shopify stores use a convention that any line item with a leading `_` should not be displayed in the cart. Here is a 
 common example of how that is implemented in a liquid cart.
 
-The key lines are as follows
+The key lines are as follows:
 
-```html
+```
 {% assign first_character_in_key = p.first | truncate: 1, '' %}
 {% unless p.last == blank or first_character_in_key == '_' %}
 ```
-And the result should look like this
+And the result should look like this:
 
-```html
+```
 {% assign property_size = item.properties | size %}
 {% if property_size > 0 %}
   {% for p in item.properties %}
@@ -35,7 +35,7 @@ And the result should look like this
   {% endfor %}
 {% endif %}
 ```
-You can learn more about this [here](https://community.shopify.com/c/shopify-design/product-pages-get-customization-information-for-products/m-p/616525)
+You can learn more about this [here](https://community.shopify.com/c/shopify-design/product-pages-get-customization-information-for-products/m-p/616525).
 
 ## Hide the discount
 
@@ -77,7 +77,7 @@ So the final result will look like:
 Sometimes discount messages appear to communicate bundle discounts, etc. In this case, we'll want to hide our message:
 
 ```html
-{% if item.message and item.message != "" and item.message != "intelligems" %}
+{% if item.message and item.message != "" and item.message != "Intelligems" %}
     <br><span>({{ item.message }})</span>
 {% endif %}
 ```

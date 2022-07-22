@@ -11,8 +11,7 @@ conversion to achieve a statistically meaningful result.
 
 ## Getting Started
 
-Our app may be downloaded and installed
-from [here](https://apps.shopify.com/intelligems?surface_detail=intelligems&surface_inter_position=1&surface_intra_position=2&surface_type=search).
+Our app may be downloaded and installed [here](https://apps.shopify.com/intelligems?surface_detail=intelligems&surface_inter_position=1&surface_intra_position=2&surface_type=search).
 
 To integrate Intelligems into your Shopify site, please read
 our [integration guide](./shopify-integration/install-app).
