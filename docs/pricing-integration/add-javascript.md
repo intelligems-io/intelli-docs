@@ -2,11 +2,9 @@
 sidebar_position: 1
 ---
 
-# Installing the App
+# Add Intelligems Javascript
 
-## Adding Our JavaScript Code to Your Frontend
-
-In your `theme.liquid` file, add our JavaScript as a source. Your individual script tag is located in the settings page on
+In your `theme.liquid` file, add our JavaScript as a source. Your individual script tag is located on the settings page in
 the Intelligems App.
 
 ```html title="theme.liquid"
