@@ -200,7 +200,8 @@ Put these tags directly onto the html element you want to affect.
 
 :::info
 
-Need help? If you need help, you can reach out to us as support@intelligems.io for integration assistance.
+Need help? If you need help, you can reach out to us as support@intelligems.io for integration assistance. For more information
+on creating a price test, see our docs [here](https://help.intelligems.io/article/15-how-to-set-up-price-tests).
 
 :::
 

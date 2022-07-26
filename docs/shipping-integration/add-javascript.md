@@ -14,3 +14,10 @@ the Intelligems App.
   ...
 </head>
 ```
+
+
+:::info
+
+For more information on creating a shipping test, see our docs [here](https://help.intelligems.io/article/22-how-to-set-up-shipping-tests).
+
+:::
