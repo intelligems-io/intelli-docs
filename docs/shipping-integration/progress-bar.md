@@ -21,3 +21,7 @@ If you are looking for additional customization, email support@intelligems.io.
 Under the Threshold section, use `Default Threshold` to set the free shipping threshold when there are no live 
 experiments. This allows you to continue using the Intelligems Cart Progress Bar even when you are not running a test.
 To hide this progress bar when no test is live, set the default threshold to 0.
+
+## Integrating With Rebuy
+Follow [this](https://help.rebuyengine.com/en/articles/6120362-how-to-use-a-custom-template-with-smart-cart) article 
+to integrate the Intelligems Cart Progress Bar with Rebuy Cart.
