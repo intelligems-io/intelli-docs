@@ -154,3 +154,53 @@ Sometimes discount messages appear to communicate bundle discounts, etc. In this
 {% endif %}
 ```
 
+### Integrating Using HandleBars
+Follow the example below if you use HandleBars in your theme. Add the HandleBar functions to the rest of your HandleBar 
+functions. 
+
+```json
+// JS 
+
+Handlebars.registerHelper('noIgDiscount', function(arg1, options) {
+    return (arg1.find(discount => discount.discount_application.title === 'intelligems' )) ? options.inverse(this) : options.fn(this) ;
+});
+Handlebars.registerHelper('hasExtraDiscounts', function(arg1, options) {
+    return arg1.some(discount => discount.discount_application.title !== 'intelligems' ) ;
+});
+
+// LIQUID EXAMPLES
+
+{{#if discountsApplied}}
+   {{#if (hasExtraDiscounts discounts)}}
+      <small class="cart__price--strikethrough">{{{price}}}</small>
+      <span class="ajaxcart__price">
+          {{{discountedPrice}}}
+      </span>
+  {{else}}
+      <small class="cart__price">{{{price}}}</small>
+  {{/if}}
+            
+  {{else}}
+     {{#if shouldShowComparePrice}}                                           
+       <small class="cart__price--strikethrough">{{{comparePrice}}}</small>                                                                                    
+     {{/if}}     
+      <span class="ajaxcart__price {{#if shouldShowComparePrice}}tw-text-red{{/if}} ">
+          {{{price}}}
+      </span>
+{{/if}}
+
+{{#if discountsApplied}}
+  <div class="text-right grid__item">
+      {{#noIgDiscount discounts}}
+          {{#each discounts}}
+              <small class="ajaxcart__discount cart__discount">
+                  {{this.discount_application.title}}
+                  (-{{{this.formattedAmount}}})
+              </small>
+          {{/each}}
+          {{else}}
+      {{/noIgDiscount}}
+  </div>
+{{/if}}
+```
+
