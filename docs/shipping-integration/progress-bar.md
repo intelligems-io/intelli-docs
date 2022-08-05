@@ -23,5 +23,7 @@ experiments. This allows you to continue using the Intelligems Cart Progress Bar
 To hide this progress bar when no test is live, set the default threshold to 0.
 
 ## Integrating With Rebuy
-Follow [this](https://help.rebuyengine.com/en/articles/6120362-how-to-use-a-custom-template-with-smart-cart) article 
-to integrate the Intelligems Cart Progress Bar with Rebuy Cart.
+1. Create a Rebuy custom smart cart template. Follow [this](https://help.rebuyengine.com/en/articles/6120362-how-to-use-a-custom-template-with-smart-cart)
+article for instructions. 
+2. Edit the template to replace the Rebuy progress bar with the Intelligems progress bar. See Step 1 under Setup.
+3. Add the igSubtotal class to the subtotal. See Step 2 under Setup. 
