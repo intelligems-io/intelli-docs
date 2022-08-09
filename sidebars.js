@@ -56,6 +56,7 @@ module.exports = {
                 },
             ],
         },
+        'headless-integration/headless-integrations',
         'advanced-settings/advanced-settings',
     ],
     
