@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Integrating Your Store
+# Integrating Your Prices
 
 The Intelligems app requires that all product `price` and `compare-at-price` locations be tagged. These tags allow the
 app to dynamically modify the price per test group.
@@ -26,7 +26,7 @@ This will go away once the product price is updated in Shopify.
 
 :::tip
 
-We highly recommend using Integration mode! This mode will highlight the price elements the Intelligems app recognizes.
+We highly recommend using Preview and Integration mode! This mode will highlight the price elements the Intelligems app recognizes.
 A successful integration will highlight all price elements on the page.
 
 :::
@@ -41,7 +41,7 @@ thoroughly browse your site and tag and addition product prices, as necessary.
 Collection pages list multiple products, often by product type or category. Each product will often have a `price` and
 a `compare-at-price`.
 
-![Product Grid Item](/img/product-grid-item.png)
+![Product Grid Item](/img/product_grid.png)
 
 ### Product Detail Pages (PDP)
 
@@ -49,48 +49,22 @@ Product Detail Pages show details for an individual product. A `price` and `comp
 this page. Your Product Detail Pages may also show related products with their corresponding prices - these prices will
 need to be tagged.
 
-![Product Details Page](/img/product-details-page.png)
+![Product Details Page](/img/pdp.png)
 
 ### Search Results Page
 
 Your search bar will likely either a) redirect users to a `search results page` or b) show search results in a dropdown.
 In either case, these prices will need to be tagged.
 
-![Search Results Page](/img/search-results-page.png)
+![Search Results Page](/img/search_bar.png)
 
 ## How to Tag Product Prices
 
 ### Option 1: Intelligems Integration Widget (Recommended)
 
-This option allows you to click on prices in your window to tag them. See how to use the integration widget [here](https://help.intelligems.io/article/33-integrating-intelligems-with-the-integration-widget).
+This option allows you to click on prices in your window to tag them. See how to use the integration widget 
+[here](./integration-widget.md).
 
-### Option 2: Mark Product Prices Using Query Selectors
-
-This option involves marking the **location** of the price element through query selectors. Each selector should be
-added to either `additional_price_class_selectors` or `additional_compare_price_class_selectors`, as appropriate, in
-your Intelligems app advanced settings. If you do not have access to the advanced settings, email support@intelligems.io.
-
-1. Right-click a product price on the page and choose `inspect`. A developer-tools window will open up with the element
-   you right-clicked highlighted.
-2. If the highlighted element already has an `id`, add the ID to your settings page in this format: `#<ID>`.
-3. If the highlighted element does not have an `id`, follow its parents outward until you find an element with a
-   noteworthy class name.
-    1. Create a _path_ to this price element by building a query selector.
-    2. See [these docs](https://www.w3schools.com/cssref/css_selectors.asp) for full documentation on to build query
-       selectors.
-
-#### Example Query Selector 1:
-
-An appropriate query selector for below would be: `a.grid-link > p.grid-link__meta`
-
-![Query Selector Example 1](/img/query-selector-example-1.png)
-
-#### Example Query Selector 2:
-
-An appropriate query selector for the **64.99 USD** price would be: `div.product-grid-info > p > span.money`
-An appropriate query selector for the **105.99 USD** price would be: `div.product-grid-info > p > s > span.money`
-
-![Query Selector Example 2](/img/query-selector-example-2.png)
 
 ### Option 2: Edit Your Theme Directly
 
