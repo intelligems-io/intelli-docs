@@ -10,4 +10,9 @@ dollars and cents. We run split [A/B tests](https://intelligems.io/blog/what-is-
 conversion to achieve a statistically meaningful result. Learn how to integrate for 
 [price tests](./pricing-integration/price-integration) and [shipping tests](./shipping-integration/add-javascript).
 
+:::info
+If your store is headless, please contact support@intelligems.io for information on how to integrate!
+:::
+
+
 
