@@ -21,7 +21,7 @@ class Intelligems
   def initialize(discount_property = '_igp', allow_free = false)
     @volume_discount_property = '_igvd'
     @volume_discount_message_property = '_igvd_message'
-    @depreciated_property = '_igLineItemDiscount'
+    @deprecated_property = '_igLineItemDiscount'
     @discount_property = discount_property
     @allow_free = allow_free
   end
@@ -37,8 +37,8 @@ class Intelligems
 
   end
 
-  def depreciated_discount_product(line_item)
-    discount = Money.new(cents: line_item.properties[@depreciated_property])
+  def deprecated_discount_product(line_item)
+    discount = Money.new(cents: line_item.properties[@deprecated_property])
     discount *= line_item.quantity
 
     if @allow_free or discount < line_item.line_price
@@ -62,8 +62,8 @@ class Intelligems
         discount_product(line_item)
       elsif !line_item.properties[@volume_discount_property].nil? && !line_item.properties[@volume_discount_property].empty?
         volume_discount(line_item)
-      elsif !line_item.properties[@depreciated_property].nil? && !line_item.properties[@depreciated_property].empty?
-             depreciated_discount_product(line_item)
+      elsif !line_item.properties[@deprecated_property].nil? && !line_item.properties[@deprecated_property].empty?
+             deprecated_discount_product(line_item)
       end
     end
   end
